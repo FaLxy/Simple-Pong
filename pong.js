@@ -22,8 +22,8 @@ const ball = {
     radius : 10,
     velocityX : 5,
     velocityY : 5,
-    speed : 7,
-    color : "WHITE"
+    speed : 10,
+    color : "TEAL"
 }
 
 // User Paddle
@@ -33,7 +33,7 @@ const user = {
     width : 10,
     height : 100,
     score : 0,
-    color : "WHITE"
+    color : "GREEN"
 }
 
 // COM Paddle
@@ -43,7 +43,7 @@ const com = {
     width : 10,
     height : 100,
     score : 0,
-    color : "WHITE"
+    color : "RED"
 }
 
 // NET
@@ -84,7 +84,7 @@ function resetBall(){
     ball.x = canvas.width/2;
     ball.y = canvas.height/2;
     ball.velocityX = -ball.velocityX;
-    ball.speed = 7;
+    ball.speed = 10;
 }
 
 // draw the net
@@ -169,7 +169,7 @@ function update(){
         ball.velocityY = ball.speed * Math.sin(angleRad);
         
         // speed up the ball everytime a paddle hits it.
-        ball.speed += 0.1;
+        ball.speed += 0.5;
     }
 }
 
@@ -202,8 +202,8 @@ function game(){
     render();
 }
 // number of frames per second
-let framePerSecond = 50;
+let framePerSecond = 144;
 
 //call the game function 50 times every 1 Sec
-let loop = setInterval(game,1000/framePerSecond);
+let loop = setInterval(game,3000/framePerSecond);
 
